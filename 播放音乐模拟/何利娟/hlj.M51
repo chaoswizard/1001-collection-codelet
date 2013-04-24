@@ -1,0 +1,286 @@
+BL51 BANKED LINKER/LOCATER V6.05                                                        06/10/2008  21:06:16  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, main.obj TO hlj REGFILE (.\hlj.ORC)
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  hlj (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         _DATA_GROUP_
+            DATA    000EH     0003H     UNIT         ?DT?MAIN
+                    0011H     000FH                  *** GAP ***
+            DATA    0020H     0001H     BIT_ADDR     ?BA?MAIN
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0555H     UNIT         ?CO?MAIN
+            CODE    0563H     033CH     UNIT         ?PR?MAIN?MAIN
+            CODE    089FH     0035H     UNIT         ?PR?TIMER0?MAIN
+            CODE    08D4H     000FH     UNIT         ?PR?DELAY?MAIN
+            CODE    08E3H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   hlj (?C_STARTUP)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0006H
+  +--> ?CO?MAIN
+  +--> ?PR?DELAY?MAIN
+
+*** NEW ROOT ***************************************************
+
+?PR?TIMER0?MAIN                -----    -----
+  +--> ?CO?MAIN
+
+
+
+BL51 BANKED LINKER/LOCATER V6.05                                                      06/10/2008  21:06:16  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  hlj (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:08E3H         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08E6H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08E3H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08E3H         LINE#         133
+  C:08E5H         LINE#         134
+  C:08E6H         LINE#         135
+  C:08E7H         LINE#         136
+  C:08E9H         LINE#         185
+  C:08ECH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0389H         PUBLIC        Mmusic110
+  C:045FH         PUBLIC        Mmusic111
+  C:050EH         PUBLIC        Mmusic112
+  B:0090H.0       PUBLIC        Y1
+  B:0090H.1       PUBLIC        Y2
+  B:0090H.2       PUBLIC        Y3
+  B:0090H.3       PUBLIC        Y4
+  D:00A8H         PUBLIC        IE
+  C:08D4H         PUBLIC        delay
+  C:000EH         PUBLIC        music
+  C:0563H         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  D:008CH         PUBLIC        TH0
+  B:00B0H.7       PUBLIC        Speaker
+BL51 BANKED LINKER/LOCATER V6.05                                                      06/10/2008  21:06:16  PAGE 3
+
+
+  D:008AH         PUBLIC        TL0
+  C:089FH         PUBLIC        timer0
+  C:002CH         PUBLIC        Mmusic11
+  C:008DH         PUBLIC        Mmusic12
+  C:00BBH         PUBLIC        Mmusic13
+  B:0088H.4       PUBLIC        TR0
+  C:013EH         PUBLIC        Mmusic14
+  C:0163H         PUBLIC        Mmusic15
+  C:01F3H         PUBLIC        Mmusic16
+  C:0248H         PUBLIC        Mmusic17
+  C:02D2H         PUBLIC        Mmusic18
+  C:031FH         PUBLIC        Mmusic19
+  D:0020H         SYMBOL        StateREG
+  D:000EH         PUBLIC        l
+  D:000FH         PUBLIC        Mymusic
+  B:0020H.0       PUBLIC        m
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        j
+  D:000AH         SYMBOL        i
+  D:000BH         SYMBOL        k
+  D:000CH         SYMBOL        p11
+  D:000DH         SYMBOL        p33
+  C:0910H         SYMBOL        Next
+  -------         ENDDO         
+  C:0563H         LINE#         297
+  C:0563H         LINE#         298
+  C:0563H         LINE#         304
+  C:0566H         LINE#         305
+  C:0569H         LINE#         306
+  C:0569H         LINE#         307
+  C:0569H         LINE#         308
+  C:056EH         LINE#         309
+  C:0570H         LINE#         310
+  C:0576H         LINE#         311
+  C:05A4H         LINE#         312
+  C:05A4H         LINE#         313
+  C:05AAH         LINE#         314
+  C:05ACH         LINE#         315
+  C:05ACH         LINE#         316
+  C:05DAH         LINE#         317
+  C:05DAH         LINE#         318
+  C:05E0H         LINE#         319
+  C:05E2H         LINE#         320
+  C:05E2H         LINE#         321
+  C:0610H         LINE#         322
+  C:0610H         LINE#         323
+  C:0616H         LINE#         324
+  C:0618H         LINE#         325
+  C:0618H         LINE#         326
+  C:0646H         LINE#         327
+  C:0646H         LINE#         328
+  C:064CH         LINE#         329
+  C:064EH         LINE#         330
+  C:064EH         LINE#         331
+  C:067CH         LINE#         332
+  C:067CH         LINE#         333
+BL51 BANKED LINKER/LOCATER V6.05                                                      06/10/2008  21:06:16  PAGE 4
+
+
+  C:0682H         LINE#         334
+  C:0684H         LINE#         335
+  C:0684H         LINE#         336
+  C:06B2H         LINE#         337
+  C:06B2H         LINE#         338
+  C:06B8H         LINE#         339
+  C:06BAH         LINE#         340
+  C:06BAH         LINE#         341
+  C:06E8H         LINE#         342
+  C:06E8H         LINE#         343
+  C:06EEH         LINE#         344
+  C:06F0H         LINE#         345
+  C:06F0H         LINE#         346
+  C:071EH         LINE#         347
+  C:071EH         LINE#         348
+  C:0724H         LINE#         349
+  C:0726H         LINE#         350
+  C:0726H         LINE#         351
+  C:0754H         LINE#         352
+  C:0754H         LINE#         353
+  C:075AH         LINE#         354
+  C:075CH         LINE#         355
+  C:075CH         LINE#         356
+  C:078AH         LINE#         357
+  C:078AH         LINE#         358
+  C:0790H         LINE#         359
+  C:0792H         LINE#         360
+  C:0792H         LINE#         361
+  C:07C0H         LINE#         362
+  C:07C0H         LINE#         363
+  C:07C6H         LINE#         364
+  C:07C8H         LINE#         365
+  C:07C8H         LINE#         366
+  C:07F9H         LINE#         367
+  C:07F9H         LINE#         368
+  C:07FFH         LINE#         369
+  C:0801H         LINE#         370
+  C:0801H         LINE#         371
+  C:0804H         LINE#         372
+  C:0807H         LINE#         373
+  C:0807H         LINE#         374
+  C:080AH         LINE#         375
+  C:0813H         LINE#         376
+  C:0816H         LINE#         377
+  C:0819H         LINE#         378
+  C:082EH         LINE#         379
+  C:082EH         LINE#         380
+  C:0833H         LINE#         381
+  C:0839H         LINE#         382
+  C:0851H         LINE#         383
+  C:0851H         LINE#         384
+  C:0851H         LINE#         385
+  C:0851H         LINE#         386
+  C:0863H         LINE#         387
+  C:0875H         LINE#         388
+  C:0877H         LINE#         389
+  C:087FH         LINE#         390
+BL51 BANKED LINKER/LOCATER V6.05                                                      06/10/2008  21:06:16  PAGE 5
+
+
+  C:087FH         LINE#         391
+  C:0881H         LINE#         392
+  C:0881H         LINE#         393
+  C:088BH         LINE#         394
+  C:088BH         LINE#         395
+  C:088EH         LINE#         396
+  C:0892H         LINE#         397
+  C:0894H         LINE#         398
+  C:089CH         LINE#         399
+  -------         ENDPROC       MAIN
+  -------         PROC          TIMER0
+  C:089FH         LINE#         405
+  C:08A7H         LINE#         407
+  C:08B8H         LINE#         408
+  C:08C9H         LINE#         409
+  C:08CBH         LINE#         410
+  -------         ENDPROC       TIMER0
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:08D4H         LINE#         413
+  C:08D4H         LINE#         414
+  C:08D4H         LINE#         415
+  C:08D8H         LINE#         416
+  C:08E2H         LINE#         417
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        MAIN
+
+
+
+FUNCTION REGISTER MASKS
+
+
+FUNCTION . . . REG MASK
+-----------------------
+
+DELAY. . . . . @0xe00b
+TIMER0 . . . . @0xf300
+
+Program Size: data=19.0 xdata=0 code=2279
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

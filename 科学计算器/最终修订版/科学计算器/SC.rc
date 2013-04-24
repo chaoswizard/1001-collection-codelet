@@ -1,0 +1,268 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SC.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 SC"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SC 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2006",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_SC_DIALOG DIALOGEX 0, 0, 267, 195
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "★王熙★"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_PUTOUT,5,15,255,15,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER,WS_EX_RIGHT
+    DEFPUSHBUTTON   "1",IDC_NUMBER1,115,152,20,15
+    DEFPUSHBUTTON   "2",IDC_NUMBER2,139,152,20,15
+    DEFPUSHBUTTON   "3",IDC_NUMBER3,163,152,20,15
+    DEFPUSHBUTTON   "4",IDC_NUMBER4,115,132,20,15
+    DEFPUSHBUTTON   "5",IDC_NUMBER5,139,132,20,15
+    DEFPUSHBUTTON   "6",IDC_NUMBER6,163,132,20,15
+    DEFPUSHBUTTON   "7",IDC_NUMBER7,115,112,20,15
+    DEFPUSHBUTTON   "8",IDC_NUMBER8,139,112,20,15
+    DEFPUSHBUTTON   "9",IDC_NUMBER9,163,112,20,15
+    DEFPUSHBUTTON   "0",IDC_NUMBER0,115,173,20,15
+    DEFPUSHBUTTON   "pi",IDC_NUMBER_pi,163,173,20,15
+    DEFPUSHBUTTON   "+/-",IDC_NUMBER_PlusMinus,216,152,20,15
+    DEFPUSHBUTTON   ".",IDC_NUMBER_Point,139,173,20,15
+    DEFPUSHBUTTON   "/",IDC_NUMBER_Divide,190,112,20,15
+    DEFPUSHBUTTON   "*",IDC_NUMBER_Multiply,190,132,20,15
+    DEFPUSHBUTTON   "-",IDC_NUMBER_Subtract,190,152,20,15
+    DEFPUSHBUTTON   "+",IDC_NUMBER_Add,190,173,20,15
+    DEFPUSHBUTTON   "Mod",IDC_NUMBER_Mod,5,173,20,15
+    DEFPUSHBUTTON   "Or",IDC_NUMBER_Or,241,132,20,15
+    DEFPUSHBUTTON   "Lsh",IDC_NUMBER_Lsh,55,173,20,15
+    DEFPUSHBUTTON   "=",IDC_NUMBER_Equal,216,173,20,15
+    DEFPUSHBUTTON   "And",IDC_NUMBER_And,241,112,20,15
+    DEFPUSHBUTTON   "Xor",IDC_NUMBER_Xor,241,173,20,15
+    DEFPUSHBUTTON   "Not",IDC_NUMBER_Not,241,152,20,15
+    DEFPUSHBUTTON   "Int",IDC_NUMBER_Int,29,173,20,15
+    DEFPUSHBUTTON   "1/X",IDC_NUMBER_Derivative,216,112,20,15
+    DEFPUSHBUTTON   "x^2",IDC_NUMBER_X2,29,152,20,15
+    DEFPUSHBUTTON   "tan",IDC_NUMBER_Tan,5,152,20,15
+    DEFPUSHBUTTON   "cos",IDC_NUMBER_Cos,5,132,20,15
+    DEFPUSHBUTTON   "x^3",IDC_NUMBER_X3,29,132,20,15
+    DEFPUSHBUTTON   "n!",IDC_NUMBER_ni,216,132,20,15
+    DEFPUSHBUTTON   "sin",IDC_NUMBER_Sin,5,112,20,15
+    DEFPUSHBUTTON   "x^y",IDC_NUMBER_Xy,29,112,20,15
+    DEFPUSHBUTTON   "lg",IDC_NUMBER_Lg,55,152,20,15
+    DEFPUSHBUTTON   "ln",IDC_NUMBER_Ln,55,132,20,15
+    DEFPUSHBUTTON   "退格",IDC_NUMBER_BackSpace,115,85,45,15
+    DEFPUSHBUTTON   "CE",IDC_NUMBER_CE,165,85,45,15
+    DEFPUSHBUTTON   "C",IDC_NUMBER_Clear,216,85,45,15
+    DEFPUSHBUTTON   "MC",IDC_NUMBER_MC,81,112,20,15
+    DEFPUSHBUTTON   "MR",IDC_NUMBER_MR,81,132,20,15
+    DEFPUSHBUTTON   "MS",IDC_NUMBER_MS,81,152,20,15
+    DEFPUSHBUTTON   "M+",IDC_NUMBER_M_Add,81,173,20,15
+    CTEXT           "",IDC_STATIC_M,81,74,20,25,SS_CENTERIMAGE | SS_SUNKEN | 
+                    NOT WS_GROUP
+    DEFPUSHBUTTON   "log",IDC_NUMBER_Log,55,112,20,15
+    CONTROL         "十进制",IDC_Decimal,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,10,45,35,15
+    CONTROL         "八进制",IDC_Octal,"Button",BS_AUTORADIOBUTTON,50,45,35,
+                    15
+    CONTROL         "二进制",IDC_Bin,"Button",BS_AUTORADIOBUTTON,90,45,35,15
+    CONTROL         "角度",IDC_Angle,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    170,45,30,15
+    CONTROL         "弧度",IDC_Radian,"Button",BS_AUTORADIOBUTTON,225,45,30,
+                    15
+    CONTROL         "Inv",IDC_Inv,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,
+                    80,25,15
+    CONTROL         "Hyp",IDC_Hyp,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,41,
+                    80,25,15
+    GROUPBOX        "",IDC_STATIC,5,35,125,30
+    GROUPBOX        "",IDC_STATIC,160,35,100,30
+    GROUPBOX        "",IDC_STATIC,5,70,65,30
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SC Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SC\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2006\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SC.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SC 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SC_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 260
+        BOTTOMMARGIN, 188
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "CALC.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 SC(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\SC.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

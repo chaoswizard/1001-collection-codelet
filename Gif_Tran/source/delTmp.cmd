@@ -1,0 +1,1 @@
+del /F /Q  /S *.plg *.dsw *.opt *.dsp *.ncb *dump.txt* *dump.gif*  Debug.*.txt

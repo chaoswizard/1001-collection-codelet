@@ -1,0 +1,4 @@
+MotorCtrl.DSN  用proteus设计的转速监控仿真图。
+MotorCtrl.mcp   用ADS1.2写的转速监控 工程。
+MotorCtrl.hex     ADS1.2生成的HEX文件，用于proteus仿真。
+运行界面.BMP ,设置界面.bmp   仿真界面截图。
