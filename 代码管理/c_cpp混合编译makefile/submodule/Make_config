@@ -1,0 +1,9 @@
+THIS_TOP_DIR := submodule
+LOCAL_SRC_CXXFILES += \
+				$(THIS_TOP_DIR)/aaaa.cpp\
+				$(THIS_TOP_DIR)/src/bbbb.cpp
+
+LOCAL_SHARED_LIBRARIES += sss zzzz
+LOCAL_C_INCLUDES += ./$(THIS_TOP_DIR)/include ./$(THIS_TOP_DIR)/src
+LOCAL_LDFLAGS += -L./$(THIS_TOP_DIR)/lib
+
