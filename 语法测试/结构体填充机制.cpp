@@ -1,90 +1,56 @@
 #include "stdio.h"
 
-#define list_get_entry(ptr, type, member)	\
-	((type *)((char *)(ptr)+(unsigned long)(&((type *)0)->member)))
+
+#define offsetof(type, member)  ((unsigned long)(&((type *)0)->member))
+
+#define member_entry(ptr, type, member)	\
+	((unsigned long)((char *)(ptr)+ offsetof(type, member))
+
+#define member_size(type, member)	(sizeof((type *)0)->member)
+	
+
 
 struct st_List{
 	char first;//4
 	short second;//2
 	char third;//1
 	long fouth;//4
-	char fif;//1
+	char fifth;//1
 };
+
+#define struct_pad_dump(type_name, cur_member, next_ofs, pad_count) do {\
+	unsigned int cur_ofs = offsetof(type_name, cur_member);\
+	unsigned int cur_size = member_size(type_name, cur_member);\
+	unsigned int cur_tail = offsetof(type_name, cur_member) + member_size(type_name, cur_member);\
+	if(next_ofs > cur_tail){\
+		unsigned int pad_size = (next_ofs - cur_tail);\
+		pad_count+= pad_size;\
+		printf("[%d]%s\t:%08X Ìî³ä%d -> %08X\n", cur_size, #cur_member, cur_ofs, pad_size, next_ofs);\
+	} else {\
+		printf("[%d]%s\t:%08X\n", cur_size, #cur_member, cur_ofs);\
+	}\
+} while(0)
+
+
+
 
 void main()
 {
 #if 0
 	st_List mylist;
-	st_List *pList;
-	pList=list_get_entry(&mylist,struct st_List,fouth);
 
-	printf("\n:%p ",pList);
+	printf("\n:%p ",member_entry(&mylist,struct st_List,fouth));
 	printf("\n:%p ",&(mylist.fouth));
 
 #else
-	unsigned long  CurAddr=0,logicAddr=0,NexAddr=0;
-	int CurMemberSize=0,padSize=0;
+	unsigned long pad_cnt = 0;
 
-//////////////////////³õÊ¼»¯///////////////////////////////
-	CurAddr=(unsigned long)(&((struct st_List *)0)->first);
-	CurMemberSize=sizeof(*(struct st_List *)0).first;
+	struct_pad_dump(struct st_List, first, offsetof(struct st_List, second), pad_cnt);
+	struct_pad_dump(struct st_List, second, offsetof(struct st_List, third), pad_cnt);
+	struct_pad_dump(struct st_List, third, offsetof(struct st_List, fouth), pad_cnt);
+	struct_pad_dump(struct st_List, fouth, offsetof(struct st_List, fifth), pad_cnt);
+	struct_pad_dump(struct st_List, fifth, sizeof(struct st_List), pad_cnt);
 
-	logicAddr=CurAddr+CurMemberSize;
-	printf("\n:%p ",CurAddr);
-	printf("\t+%d",CurMemberSize);
-//////////////////////¿ªÊ¼///////////////////////
-	CurAddr=(unsigned long)(&((struct st_List *)0)->second);
-	CurMemberSize=sizeof(*(struct st_List *)0).second;
-
-	if(logicAddr<CurAddr){
-		printf("\tÌî³ä%d",(CurAddr - logicAddr));
-	}
-
-	logicAddr=CurAddr+CurMemberSize;
-	printf("\n:%p ",CurAddr);
-	printf("\t+%d",CurMemberSize);
-///////////////////////////////////////////////////
-	CurAddr=(unsigned long)(&((struct st_List *)0)->third);
-	CurMemberSize=sizeof(*(struct st_List *)0).third;
-
-	if(logicAddr<CurAddr){
-		printf("\tÌî³ä%d",(CurAddr - logicAddr));
-	}
-
-	logicAddr=CurAddr+CurMemberSize;
-	printf("\n:%p ",CurAddr);
-	printf("\t+%d",CurMemberSize);
-///////////////////////////////////////////////////
-	CurAddr=(unsigned long)(&((struct st_List *)0)->fouth);
-	CurMemberSize=sizeof(*(struct st_List *)0).fouth;
-
-	if(logicAddr<CurAddr){
-		printf("\tÌî³ä%d",(CurAddr - logicAddr));
-	}
-
-	logicAddr=CurAddr+CurMemberSize;
-	printf("\n:%p ",CurAddr);
-	printf("\t+%d",CurMemberSize);
-///////////////////////////////////////////////////
-	CurAddr=(unsigned long)(&((struct st_List *)0)->fif);
-	CurMemberSize=sizeof(*(struct st_List *)0).fif;
-
-	if(logicAddr<CurAddr){
-		printf("\tÌî³ä%d",(CurAddr - logicAddr));
-	}
-
-	logicAddr=CurAddr+CurMemberSize;
-	printf("\n:%p ",CurAddr);
-	printf("\t+%d",CurMemberSize);
-/////////////////½áÊø//////////////////////////
-	CurAddr=sizeof(*((struct st_List *)0));
-
-	if(logicAddr<CurAddr){
-		printf("\tÌî³ä%d",(CurAddr - logicAddr));
-	}
-
-	printf("\n:%p ",CurAddr);
-	printf("\t½áÊø");
 ////////////////////////////////
 
 #endif
