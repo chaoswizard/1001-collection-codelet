@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+i = 1 + 2 * 4
+print i,
+
+i = raw_input('pls input:\n')
+print int(i)
+
