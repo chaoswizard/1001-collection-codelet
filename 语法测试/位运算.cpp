@@ -4,8 +4,7 @@ struct st_bittype_a{
 	struct {
 		int a:6;
 		int b:4;
-		int c:4;
-		int d:3;
+		int c:1;
 	} test;
 		int e:1;
 };
@@ -18,7 +17,21 @@ struct st_bittype_b{
 		int e:1;
 };
 
+#define debug_size(__var)  printf("size " #__var " %d\n",sizeof(__var))
 
+void test_struct_size()
+{
+	struct st_bittype_a a;
+	struct st_bittype_b b;
+	
+	debug_size(short);
+	debug_size(a);
+	debug_size(a.test);
+	//debug_size(a.e);
+	//printf("\nsss:%d\n", sizeof(a.e));
+	debug_size(b);
+	//debug_size(b.e);
+}
 
 void main()
 {
@@ -27,6 +40,5 @@ void main()
     int c=a|b;
 	printf("%08X | %08X = %08x \n",a, b, c);
 	
-	printf("struct_size:%d,%d\n", sizeof(st_bittype_a), sizeof(st_bittype_b));
-
+	test_struct_size();
 }
