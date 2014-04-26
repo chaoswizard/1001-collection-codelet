@@ -5,3 +5,9 @@ MemoryMalloc			内存申请
 ParameterOrder			参数顺序
 StructPading			结构体填充
 VariableType			变量类型
+LongIntergerAdd_Algorithm	长整数加法
+List_Algorithm			链表管理
+HaarDWT_Algorithm		小波Haar算法实现
+Keyboard_Api			控制台按键测试
+Matrix_2Dimenson_Define		2维数组定义
+FileEncryption_Algorithm	文件加密核心算法
