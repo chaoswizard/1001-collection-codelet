@@ -1,0 +1,7 @@
+BitOperation			位运算
+MacroDefinition			宏定义
+MathOperation			数学运算
+MemoryMalloc			内存申请
+ParameterOrder			参数顺序
+StructPading			结构体填充
+VariableType			变量类型
